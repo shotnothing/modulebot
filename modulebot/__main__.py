@@ -1,9 +1,10 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from pathlib import Path
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
-
+print(Path(os.getcwd()))
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
