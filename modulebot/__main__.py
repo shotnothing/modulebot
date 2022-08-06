@@ -1,5 +1,7 @@
-import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from boto.s3.connection import S3Connection
+
+import logging
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
@@ -8,10 +10,9 @@ PORT = int(os.environ.get('PORT', 5000))
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
-print(os.listdir())
+
 # Fetch token
-with open(os.path.abspath(os.getcwd()) + "/token", encoding = 'utf-8') as f:
-   TOKEN = f.read()
+TOKEN = os.environ.get('token', None)
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
