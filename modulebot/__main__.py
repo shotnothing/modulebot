@@ -1,9 +1,9 @@
-"""Summary
+"""Main event loop of the bot.
 
 Attributes:
-    logger (TYPE): Description
-    PORT (TYPE): Description
-    TOKEN (TYPE): Description
+    logger (logger): Logger from the python logging library
+    PORT (int): Port to webhook
+    TOKEN (string): Telegram API secret token, defined in Heroku's config vars
 """
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -24,41 +24,40 @@ def start(update, context):
     """Start command handler
     
     Args:
-        update (TYPE): Description
-        context (TYPE): Description
+        update (telegram.Update): WIP
+        context (telegram.CCT): WIP
     """
     update.message.reply_text('Hi!')
 
 def help(update, context):
-    """Summary
+    """Start command handler
     
     Args:
-        update (TYPE): Description
-        context (TYPE): Description
+        update (telegram.Update): WIP
+        context (telegram.CCT): WIP
     """
-    update.message.reply_text(type(update))
-    update.message.reply_text(type(context))
+    update.message.reply_text('Help?')
 
 def dont_understand(update, context):
-    """Summary
+    """Message handler for catching not understood input.
     
     Args:
-        update (TYPE): Description
-        context (TYPE): Description
+        update (telegram.Update): WIP
+        context (telegram.CCT): WIP
     """
     update.message.reply_text("Sorry, I don't understand {update.message.text}")
 
 def error(update, context):
-    """Summary
+    """Error handler to log errors and the update that caused it.
     
     Args:
-        update (TYPE): Description
-        context (TYPE): Description
+        update (telegram.Update): WIP
+        context (telegram.CCT): WIP
     """
     logger.warning('[Error] Update "{update}" caused error "{context.error}"')
 
 def main():
-    """Summary
+    """Main
     """
     updater = Updater(TOKEN, use_context=True)
 
