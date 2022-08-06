@@ -40,15 +40,15 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = '.md'
 
 # The master toctree document.
 master_doc = 'index'
 
 # General information about the project.
 project = 'ModuleBot'
-copyright = "2022, JW"
-author = "JW"
+copyright = "2022, shotnothing and eeyain"
+author = "shotnothing and eeyain"
 
 # The version info for the project you're documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -129,7 +129,7 @@ latex_elements = {
 latex_documents = [
     (master_doc, 'modulebot.tex',
      'ModuleBot Documentation',
-     'JW', 'manual'),
+     'shotnothing and eeyain', 'manual'),
 ]
 
 

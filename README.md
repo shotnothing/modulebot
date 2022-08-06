@@ -19,3 +19,5 @@ Misc: #TODO
 - Basic IDLE setup and installation
 - How to open .py files on IDLE
 - shitposting capabilities
+
+[Dev] Remember to put your token in the root directory.
