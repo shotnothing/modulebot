@@ -1,6 +1,5 @@
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-from pathlib import Path
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
@@ -9,9 +8,9 @@ PORT = int(os.environ.get('PORT', 5000))
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
-
+print(os.path.abspath(os.getcwd()))
 # Fetch token
-with open("./token", encoding = 'utf-8') as f:
+with open(os.path.abspath(os.getcwd()) + "/token", encoding = 'utf-8') as f:
    TOKEN = f.read()
 
 # Define a few command handlers. These usually take the two arguments update and
