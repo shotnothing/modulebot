@@ -4,14 +4,14 @@ from pathlib import Path
 import os
 
 PORT = int(os.environ.get('PORT', 5000))
-print(Path(os.getcwd()))
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Fetch token
-with open("../token", encoding = 'utf-8') as f:
+with open("./token", encoding = 'utf-8') as f:
    TOKEN = f.read()
 
 # Define a few command handlers. These usually take the two arguments update and
